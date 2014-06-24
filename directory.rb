@@ -1,6 +1,6 @@
 
 
-students =[
+students_fixed =[
 	{:name => "Dave", :cohort=> :june},
 	{:name => "Eddie", :cohort =>:june},
 	{:name => "Catharina", :cohort =>:june},
@@ -27,6 +27,20 @@ students =[
 	{:name => "Alex", :cohort => :june},
 	{:name => "Jeremy", :cohort => :june}
 ]
+
+def input_students
+	puts "Please enter the names of the students"
+	puts "To finish, just hit return twice"
+	students = []
+	name = gets.chomp
+	while !name.empty? do
+		students << {:name => name, :cohort => :june}
+		puts "Now we have #{students.length} students"
+		name = gets.chomp
+	end
+	students
+end
+
 def print_header
 	puts "The students of my cohort at Makers Academy"
 	puts '-------------------'
@@ -42,6 +56,7 @@ def print_footer(names)
 	puts "Overall, we have #{names.length} great students"
 end
 
+students = input_students
 print_header
 print(students)
 print_footer(students)
