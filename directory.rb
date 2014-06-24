@@ -25,3 +25,7 @@ puts "Joe"
 puts "Alex"
 puts "Jeremy"
 
+print "Overall, we have "
+print 25
+puts " great students"
+
